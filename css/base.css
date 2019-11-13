@@ -1,0 +1,31 @@
+
+body, main {
+  margin: auto; 
+  font-family: 'Liu Jian Mao Cao', cursive;
+  text-align: center;
+  background-color: bisque;
+  
+}
+
+h1 {
+  font-size: 10.5vw;
+  margin: 5% 0;
+  color: rgb(18, 126, 126);
+}
+
+select {
+  width: 50%;
+  height: 45px;
+  font-size: 14pt;
+  max-width: 200px;
+  color: rgb(80, 53, 20);
+  font-family: 'Liu Jian Mao Cao', cursive;
+
+}
+#sort{
+    color: rgb(17, 105, 105);  
+    font-display: bold;  
+  }
+
+
+
