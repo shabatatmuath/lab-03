@@ -92,5 +92,39 @@ $(function() {
         }
       });
     };
-  
+    let navBtns = () => {
+      $('#navigation').append(
+        '<button class="navButtons" id="data/page-1.json" type="button">Page 1</button>' +
+          '<button class="navButtons" id="data/page-2.json" type="button">Page 2</button>'
+      );
+      $('.navButtons').click(function(event) {
+        currentPage = event.target.id;
+        $('.animal').remove();
+        Horn.loadHorns(currentPage);
+      });
+    };
+    let sortBtns = () => {
+      $('#sort').append(
+        '<input class="sortBtns" value="title" type="radio" name="sort" checked> Sort by Title </input>' +
+          '<input class="sortBtns" value="horns" name="sort" type="radio"> Sort by Horns </input>'
+      );
+      $('.sortBtns').on('click', function() {
+        let checked = $('.sortBtns:checked').val();
+        if (sortedBy !== checked) {
+          sortedBy = checked;
+          $('.animal').remove();
+          Horn.loadHorns(currentPage);
+        }
+      });
+    };
+    $(() => {
+      Horn.readJSON('data/page-1.json');
+      Horn.readJSON('data/page-2.json');
+      _filterImages();
+      navBtns();
+      sortBtns();
+    });
+  });
+ 
+ 
  
